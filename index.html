@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+  <link rel='manifest' href='manifest.json'>
 <title>Pong Spiel</title>
 <style>
   body {
@@ -20,6 +21,12 @@
 <body>
 <canvas id="pongCanvas"></canvas>
 <script>
+  if ('serviceWorker' in navigator) {
+window.addEventListener('load', function() {
+navigator.serviceWorker.register('./service-worker.js');
+console.log("Service Worker registered");
+});
+}
   const canvas = document.getElementById('pongCanvas');
   const ctx = canvas.getContext('2d');
   canvas.width = 800;
