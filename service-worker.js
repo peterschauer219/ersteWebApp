@@ -1,4 +1,4 @@
-const cacheName = 'goldpwa-v1';
+const cacheName = 'PingPong';
 const staticAssets = [
 './',
 './index.html',
